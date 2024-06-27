@@ -19,5 +19,14 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
+-- Temporary MOJO workaround
+vim.keymap.set('n', '<leader>mo', function()
+  vim.lsp.start {
+    name = 'mojo',
+    cmd = { 'mojo-lsp-server' },
+    root_dir = require('lspconfig').util.find_git_ancestor(),
+  }
+end, { desc = 'Launch Mojo LSP' })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

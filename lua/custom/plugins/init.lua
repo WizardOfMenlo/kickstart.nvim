@@ -12,6 +12,5 @@ return {
       vim.g.vimtex_view_method = 'skim'
     end,
   },
-  'github/copilot.vim',
   'tpope/vim-fugitive',
 }
